@@ -15,9 +15,9 @@ int main()
 	Integer a(9);
 	Integer b(15);
 
-	int c = a.operator<(b);
+	Integer c = a.operator+(b);
 		
-	std::cout << c;
+	//std::cout << c;
 
 
 

@@ -15,6 +15,13 @@ namespace ExactArithmetic
 		digits.push_back(d);
 	}
 
+	Integer Integer::operator+(const Integer & rhs) const
+	{
+		Integer result(*this);
+		result += rhs;
+		return result;
+	}
+
 	bool Integer::operator<(const Integer & rhs) const
 	{
 		
@@ -23,7 +30,6 @@ namespace ExactArithmetic
 			return true;
 		}
 		
-
 		auto lhs_it = this->digits.begin();
 		auto rhs_it = rhs.digits.begin();
 
@@ -59,5 +65,10 @@ namespace ExactArithmetic
 			return true;
 		}
 		return false;
+	}
+	Integer & Integer::operator+=(const Integer & rhs)
+	{
+		*this = *this + rhs;
+		return *this;
 	}
 }
